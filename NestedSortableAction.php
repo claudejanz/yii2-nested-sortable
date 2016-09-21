@@ -5,7 +5,8 @@ namespace claudejanz\yii2nestedSortable;
 use Yii;
 use yii\base\Action;
 
-class NestedSortableAction extends Action {
+class NestedSortableAction extends Action
+{
 
     public $modelclass;
     public $scenario = '';
@@ -29,38 +30,26 @@ class NestedSortableAction extends Action {
     public $parentId = 'parent_id';
 
     public function run() {
-        // Get the JSON string
-        $jsonstring = $_GET['jsonstring'];
-
-        // Decode it into an array
-        $jsonDecoded = json_decode($jsonstring, true, 64);
-
-        // Run the function above
-        $readbleArray = $this->parseJsonArray($jsonDecoded);
-
-        // Loop through the "readable" array and save changes to DB
-        foreach ($readbleArray as $key => $value) {
-
-            // $value should always be an array, but we do a check
-            if (is_array($value)) {
-
-                $modelclass = $this->modelclass;
-                $pks = (array)$modelclass::primaryKey();
-                $model = $modelclass::find()->where([
-                            join(',',$pks) => $value['id'],
-                        ])->one();
-                if ($this->scenario) {
-                    $model->setScenario($this->scenario);
-                }
-
-                $model->{$this->orderBy} = $key;
-                $model->{$this->parentId} = $value['parentID'];
-                $model->save(false);
+        $posts = Yii::$app->request->post('item');
+        $i=0;
+        foreach ($posts as $key => $value) {
+            $modelclass = $this->modelclass;
+            $pks = (array) $modelclass::primaryKey();
+            $model = $modelclass::find()->where([
+                        join(',', $pks) => $key,
+                    ])->one();
+            if ($this->scenario) {
+                $model->setScenario($this->scenario);
             }
+
+            $model->{$this->orderBy} = $i;
+            $model->{$this->parentId} = ($value!=0)?$value:null;
+            $model->save(false);
+            $i++;
         }
 
         // Echo status message for the update
-        echo Yii::t('app', "The list was updated ") . date("y-m-d H:i:s") . "!";
+        echo Yii::t('app', "The hierarchy was updated on {datetime} !",['datetime'=>Yii::$app->formatter->asDatetime('Now')]);
     }
 
     public function parseJsonArray($jsonArray, $parentID = null) {
