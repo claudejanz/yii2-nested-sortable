@@ -4,12 +4,12 @@ Nested Sortable
 [![Latest Stable Version](https://poser.pugx.org/claudejanz/yii2-nested-sortable/v/stable.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![Total Downloads](https://poser.pugx.org/claudejanz/yii2-nested-sortable/downloads.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![Latest Unstable Version](https://poser.pugx.org/claudejanz/yii2-nested-sortable/v/unstable.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![License](https://poser.pugx.org/claudejanz/yii2-nested-sortable/license.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable)
 
 
-an implementation of [nestedSortable2.0](http://ilikenwf.github.io/example.html){:target="_blank"}
+an implementation of [nestedSortable2.0](http://ilikenwf.github.io/example.html)
 
 Installation
 ------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/){:target="_blank"}.
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
 
