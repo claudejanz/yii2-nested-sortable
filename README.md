@@ -26,11 +26,6 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
------
-
-Once the extension is installed, simply use it in your code by  :
-
 In table migrateion:
 ```php
 $this->createTable('page', [
@@ -71,6 +66,11 @@ public function getPages()
    return $this->hasMany(Page::className(), ['parent_id' => 'id'])->inverseOf('parent');
 }
 ```
+
+Usage
+-----
+
+Once the extension is installed, simply use it in your code by  :
 
 In view:
 ```php
