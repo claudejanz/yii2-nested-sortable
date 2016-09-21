@@ -23,6 +23,7 @@ class NestedSortable extends Sortable
     public $itemsAttribute = 'pages';
     public $url = [];
     public $handleOptions = [];
+    public $pjaxSuccessId;
     public $clientOptions = [
         'forcePlaceholderSize' => true,
         'handle'               => 'div',
@@ -55,20 +56,20 @@ class NestedSortable extends Sortable
         }
         if (!isset($this->clientEvents['update'])) {
             $this->clientEvents['update'] = new JsExpression("function(){
-                    $.ajax({
+                $.ajax({
                         method: 'POST',
                         url: '" . Url::to($this->url) . "',
                         data: $('#" . $this->options['id'] . "').nestedSortable('serialize'),
                         dataType: 'json'
-                    })
-                    .done(function( msg ) {
-                      alert( 'Data Saved: ' + msg );
+                    }).done(function( data ) {
+                        ".(($this->pjaxSuccessId)?"$.pjax.reload($('#$this->pjaxSuccessId'),{timeout:false});":'')."
+                       // if(data)alert(data);
                     });
 					
 				}");
         }
         $this->registerWidget('nestedSortable');
-        echo $this->renderItemsR($this->items) . PHP_EOL;
+        return $this->renderItemsR($this->items) . PHP_EOL;
     }
 
     /**

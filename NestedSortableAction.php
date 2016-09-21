@@ -4,6 +4,7 @@ namespace claudejanz\yii2nestedSortable;
 
 use Yii;
 use yii\base\Action;
+use yii\web\Response;
 
 class NestedSortableAction extends Action
 {
@@ -47,9 +48,9 @@ class NestedSortableAction extends Action
             $model->save(false);
             $i++;
         }
-
+        Yii::$app->response->format = Response::FORMAT_JSON;
         // Echo status message for the update
-        echo Yii::t('app', "The hierarchy was updated on {datetime} !",['datetime'=>Yii::$app->formatter->asDatetime('Now')]);
+        return Yii::t('app', "The hierarchy was updated on {datetime} !",['datetime'=>Yii::$app->formatter->asDatetime('Now')]);
     }
 
     public function parseJsonArray($jsonArray, $parentID = null) {
