@@ -45,7 +45,7 @@ $this->addForeignKey('fk-page-parent_id-page-id', 'page', 'parent_id', 'page', '
 ```
 
 In ActiveRecord:
-[for more details on Customizing Query Classes](http://www.yiiframework.com/doc-2.0/guide-db-active-record.html#customizing-query-classes){:target="_blank"}
+[for more details on Customizing Query Classes](http://www.yiiframework.com/doc-2.0/guide-db-active-record.html#customizing-query-classes)
 ```php
 /**
 * @inheridoc
