@@ -4,12 +4,12 @@ Nested Sortable
 [![Latest Stable Version](https://poser.pugx.org/claudejanz/yii2-nested-sortable/v/stable.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![Total Downloads](https://poser.pugx.org/claudejanz/yii2-nested-sortable/downloads.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![Latest Unstable Version](https://poser.pugx.org/claudejanz/yii2-nested-sortable/v/unstable.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable) [![License](https://poser.pugx.org/claudejanz/yii2-nested-sortable/license.svg)](https://packagist.org/packages/claudejanz/yii2-nested-sortable)
 
 
-an implementation of [nestedSortable2.0](http://ilikenwf.github.io/example.html)
+an implementation of [nestedSortable2.0](http://ilikenwf.github.io/example.html){:target="_blank"}
 
 Installation
 ------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/){:target="_blank"}.
 
 Either run
 
@@ -45,7 +45,7 @@ $this->addForeignKey('fk-page-parent_id-page-id', 'page', 'parent_id', 'page', '
 ```
 
 In ActiveRecord:
-[for more details on Customizing Query Classes](http://www.yiiframework.com/doc-2.0/guide-db-active-record.html#customizing-query-classes)
+[for more details on Customizing Query Classes](http://www.yiiframework.com/doc-2.0/guide-db-active-record.html#customizing-query-classes){:target="_blank"}
 ```php
 /**
 * @inheridoc
