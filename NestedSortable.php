@@ -13,7 +13,6 @@ use yii\jui\Sortable;
  */
 class NestedSortable extends Sortable
 {
-
     /**
      * Registers a specific jQuery UI widget asset bundle, initializes it with client options and registers related events
      * @param string $name the name of the jQuery UI widget
