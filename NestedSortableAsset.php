@@ -18,5 +18,8 @@ class NestedSortableAsset extends AssetBundle
     public $js = [
         'jquery.mjs.nestedSortable.js',
     ];
+     public $depends = [
+        'yii\jui\JuiAsset',
+    ];
 
 }

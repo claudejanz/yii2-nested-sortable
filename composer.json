@@ -12,6 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
+        "yiisoft/yi2-jui": "*",
         "bower-asset/nestedSortable2.0":"*"
     },
     "autoload": {
