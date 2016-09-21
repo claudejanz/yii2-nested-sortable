@@ -25,6 +25,8 @@ or add
 
 to the require section of your `composer.json` file.
 
+Prepare Model
+-------------
 
 In table migrateion:
 ```php
