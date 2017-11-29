@@ -13,7 +13,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-jui": "*",
-        "bower-asset/nestedSortable2.0":"*"
+        "bower-asset/jquery-nested-sortable":"*"
     },
     "autoload": {
         "psr-4": {
